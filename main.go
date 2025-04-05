@@ -189,7 +189,13 @@ func main() {
 	// Log server start.
 	log.Println("Starting Mass SMS Mailer API server on http://localhost:3000 ...")
 
-	// Register endpoints using the default HTTP mux.
+	// Serve static files from the public directory
+	fs := http.FileServer(http.Dir("public"))
+	http.Handle("/", http.StripPrefix("/", fs))
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("public/css"))))
+	http.Handle("/js/", http.StripPrefix("/js/", http.FileServer(http.Dir("public/js"))))
+
+	// Register API endpoints using the default HTTP mux.
 	http.HandleFunc("/api/generate-api-key", GenerateAPIKeyHandler)
 	http.HandleFunc("/api/test-smtp", TestSMTPHandler)
 	http.HandleFunc("/api/test-smtp-config", TestSMTPConfigHandler)
@@ -199,6 +205,7 @@ func main() {
 
 	// Start the HTTP server.
 	serverAddr := ":3000"
+	log.Printf("Server running at http://localhost%s", serverAddr)
 	if err := http.ListenAndServe(serverAddr, nil); err != nil {
 		log.Fatalf("Server stopped with error: %v", err)
 	}

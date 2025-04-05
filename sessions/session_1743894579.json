@@ -1,0 +1,19 @@
+{
+  "apiKey": "",
+  "fromName": "",
+  "subject": "",
+  "letter": "",
+  "smtpConfigs": [
+    {
+      "host": "",
+      "port": 587,
+      "username": "",
+      "password": "",
+      "from": "",
+      "enabled": true
+    }
+  ],
+  "usageLimits": null,
+  "carriers": null,
+  "numbers": null
+}

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS - Mass SMS Marketing Solution</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        dark: '#1E293B',
+                        light: '#F1F5F9'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-light font-sans">
+    <!-- Header Section -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-paper-plane text-primary text-2xl"></i>
+                <span class="text-xl font-bold text-dark font-heading">SMS </span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="text-gray-600 hover:text-primary transition-colors">Features</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-primary transition-colors">How It Works</a>
+                <a href="#pricing" class="text-gray-600 hover:text-primary transition-colors">Pricing</a>
+                <a href="#contact" class="text-gray-600 hover:text-primary transition-colors">Contact</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <a href="/login" class="hidden md:inline-block text-primary hover:text-primary-dark transition-colors">Login</a>
+                <a href="/signup" class="bg-primary hover:bg-blue-600 text-white px-4 py-2 rounded-md transition-colors">Get Started</a>
+                <button class="md:hidden text-gray-600" id="mobile-menu-button">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white pb-4 px-4">
+            <a href="#features" class="block py-2 text-gray-600 hover:text-primary transition-colors">Features</a>
+            <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-primary transition-colors">How It Works</a>
+            <a href="#pricing" class="block py-2 text-gray-600 hover:text-primary transition-colors">Pricing</a>
+            <a href="#contact" class="block py-2 text-gray-600 hover:text-primary transition-colors">Contact</a>
+            <a href="/login" class="block py-2 text-primary hover:text-primary-dark transition-colors">Login</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 md:py-24 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold text-dark mb-4 font-heading">Mass SMS Marketing Made Simple</h1>
+                <p class="text-lg text-gray-600 mb-8">Reach thousands of customers instantly with our powerful SMS marketing platform. Easy to use, reliable, and cost-effective.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="/signup" class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-md text-center transition-colors">Start Free Trial</a>
+                    <a href="#demo" class="border border-gray-300 hover:border-primary text-gray-700 hover:text-primary px-6 py-3 rounded-md text-center transition-colors">
+                        <i class="fas fa-play-circle mr-2"></i> Watch Demo
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center space-x-2">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="User">
+                    </div>
+                    <p class="text-sm text-gray-600">Trusted by <span class="font-semibold">2,000+</span> businesses</p>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="bg-white p-6 rounded-lg shadow-xl max-w-md mx-auto">
+                    <div class="flex items-center mb-4">
+                        <div class="w-3 h-3 bg-red-500 rounded-full mr-2"></div>
+                        <div class="w-3 h-3 bg-yellow-500 rounded-full mr-2"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="bg-gray-100 p-4 rounded">
+                            <div class="flex items-center mb-2">
+                                <i class="fas fa-paper-plane text-primary mr-2"></i>
+                                <span class="font-medium">Campaign: Summer Sale</span>
+                            </div>
+                            <p class="text-sm text-gray-600">Message sent to 1,245 recipients</p>
+                            <div class="mt-2 w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded">
+                            <div class="flex justify-between">
+                                <span class="text-sm font-medium">Delivery Rate</span>
+                                <span class="text-sm font-medium text-primary">98.5%</span>
+                            </div>
+                            <div class="mt-2 w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-primary h-2 rounded-full" style="width: 98.5%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded">
+                            <div class="flex justify-between">
+                                <span class="text-sm font-medium">Response Rate</span>
+                                <span class="text-sm font-medium text-secondary">24.3%</span>
+                            </div>
+                            <div class="mt-2 w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-secondary h-2 rounded-full" style="width: 24.3%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute -z-10 -top-6 -right-6 w-64 h-64 bg-primary/10 rounded-full blur-2xl"></div>
+                <div class="absolute -z-10 -bottom-10 -left-10 w-72 h-72 bg-secondary/10 rounded-full blur-2xl"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-heading">Powerful Features</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Everything you need to run successful SMS marketing campaigns</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-bolt text-primary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Mass SMS Sending</h3>
+                    <p class="text-gray-600">Send thousands of SMS messages in seconds with our optimized delivery system.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-chart-line text-secondary text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Detailed Analytics</h3>
+                    <p class="text-gray-600">Track delivery rates, responses, and campaign performance in real-time.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-purple-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Contact Management</h3>
+                    <p class="text-gray-600">Organize contacts into groups and segments for targeted campaigns.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-alt text-red-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Scheduled Campaigns</h3>
+                    <p class="text-gray-600">Plan and schedule your SMS campaigns in advance for optimal timing.</p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-shield-alt text-yellow-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Secure & Reliable</h3>
+                    <p class="text-gray-600">Enterprise-grade security with multiple SMTP configurations for reliability.</p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-code text-indigo-600 text-xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">API Integration</h3>
+                    <p class="text-gray-600">Integrate with your existing systems using our comprehensive API.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-heading">How It Works</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Simple steps to launch your SMS marketing campaign</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Configure SMTP</h3>
+                    <p class="text-gray-600">Set up your SMTP servers and test connections to ensure reliable delivery.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Import Contacts</h3>
+                    <p class="text-gray-600">Upload your contact list and select the carriers for your target audience.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Send & Track</h3>
+                    <p class="text-gray-600">Compose your message, send it, and monitor delivery and response rates.</p>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold text-dark mb-4 font-heading">See it in action</h3>
+                <div class="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg">
+                    <div id="demo" class="flex items-center justify-center h-full">
+                        <button class="bg-primary hover:bg-blue-600 text-white w-16 h-16 rounded-full flex items-center justify-center transition-colors">
+                            <i class="fas fa-play text-xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-heading">Simple Pricing</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Choose the plan that fits your business needs</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Basic</h3>
+                    <div class="text-3xl font-bold text-dark mb-4">$29<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                    <p class="text-gray-600 mb-6">Perfect for small businesses just getting started</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Up to 5,000 SMS/month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>2 SMTP configurations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Basic analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Email support</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="block w-full bg-gray-100 hover:bg-gray-200 text-dark text-center py-3 rounded-md transition-colors">Get Started</a>
+                </div>
+                
+                <!-- Pro Plan -->
+                <div class="bg-primary bg-opacity-5 p-8 rounded-lg shadow-md border border-primary relative transform scale-105">
+                    <div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg">POPULAR</div>
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Professional</h3>
+                    <div class="text-3xl font-bold text-dark mb-4">$79<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                    <p class="text-gray-600 mb-6">Ideal for growing businesses with regular campaigns</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Up to 20,000 SMS/month</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>5 SMTP configurations</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Advanced analytics</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Priority support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Scheduled campaigns</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="block w-full bg-primary hover:bg-blue-600 text-white text-center py-3 rounded-md transition-colors">Get Started</a>
+                </div>
+                
+                <!-- Enterprise Plan -->
+                <div class="bg-white p-8 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-shadow">
+                    <h3 class="text-xl font-semibold text-dark mb-2 font-heading">Enterprise</h3>
+                    <div class="text-3xl font-bold text-dark mb-4">$199<span class="text-lg text-gray-500 font-normal">/month</span></div>
+                    <p class="text-gray-600 mb-6">For large businesses with high-volume needs</p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Unlimited SMS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Unlimited SMTP configs</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Custom reporting</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>24/7 dedicated support</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>API access</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Custom integrations</span>
+                        </li>
+                    </ul>
+                    <a href="/signup" class="block w-full bg-gray-100 hover:bg-gray-200 text-dark text-center py-3 rounded-md transition-colors">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-dark mb-4 font-heading">What Our Customers Say</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Trusted by businesses worldwide</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-dark">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-500">Marketing Director, TechCorp</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">"SMS Mailer has transformed our marketing strategy. We've seen a 40% increase in customer engagement since switching to their platform."</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-dark">Michael Chen</h4>
+                            <p class="text-sm text-gray-500">CEO, GrowthStartup</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">"The reliability and speed of SMS Mailer is unmatched. We can reach our entire customer base in minutes, not hours."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Customer" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-dark">Emily Rodriguez</h4>
+                            <p class="text-sm text-gray-500">Owner, Boutique Retail</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="text-gray-600">"As a small business owner, I appreciate how easy SMS Mailer is to use. Their customer support team is always there when I need help."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-50 rounded-lg shadow-md overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8">
+                        <h2 class="text-2xl font-bold text-dark mb-4 font-heading">Get in Touch</h2>
+                        <p class="text-gray-600 mb-6">Have questions? We're here to help you get started with SMS Mailer.</p>
+                        
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary hover:bg-blue-600 text-white px-6 py-3 rounded-md transition-colors w-full">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="bg-primary p-8 text-white">
+                        <h3 class="text-xl font-semibold mb-4 font-heading">Contact Information</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                                <span>123 Business Street, Suite 100<br>San Francisco, CA 94107</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-envelope mt-1 mr-3"></i>
+                                <span>contact@smsmailer.com</span>
+                            </div>
+                            <div class="flex items-start">
+                                <i class="fas fa-phone-alt mt-1 mr-3"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <h4 class="text-sm font-semibold uppercase mb-3">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="text-white hover:text-blue-100 transition-colors"><i class="fab fa-twitter text-xl"></i></a>
+                                <a href="#" class="text-white hover:text-blue-100 transition-colors"><i class="fab fa-facebook-f text-xl"></i></a>
+                                <a href="#" class="text-white hover:text-blue-100 transition-colors"><i class="fab fa-linkedin-in text-xl"></i></a>
+                                <a href="#" class="text-white hover:text-blue-100 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="flex items-center space-x-2 mb-4 md:mb-0">
+                    <i class="fas fa-paper-plane text-primary text-2xl"></i>
+                    <span class="text-xl font-bold font-heading">SMS Mailer</span>
+                </div>
+                <div class="flex flex-wrap justify-center md:justify-end space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors mb-2 md:mb-0">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors mb-2 md:mb-0">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors mb-2 md:mb-0">FAQ</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors mb-2 md:mb-0">Support</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center md:text-left">
+                <p class="text-gray-400">&copy; <span id="current-year">2023</span> SMS Mailer. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
