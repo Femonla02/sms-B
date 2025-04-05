@@ -25,7 +25,7 @@ A production-ready HTTP API service for sending bulk SMS messages via email-to-S
 
 1. Clone the repository:
 ```sh
-git clone https://github.com/yourusername/sms-mailer.git
+git clone https://github.com/dwightsyeve/sms.git
 cd sms-mailer
 ```
 
